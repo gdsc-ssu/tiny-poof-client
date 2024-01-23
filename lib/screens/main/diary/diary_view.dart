@@ -14,6 +14,7 @@ class DiaryView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BaseView(
       viewModel: DiaryViewModel.instance,
+      isResetState: true,
       builder: (context, viewModel, child) => Scaffold(
         appBar: CustomAppbar(
           text: "일기쓰기",

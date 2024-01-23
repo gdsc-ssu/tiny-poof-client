@@ -15,8 +15,8 @@ class DiaryListView extends StatelessWidget {
       isResetState: false,
       builder: (context, viewModel, child) => Scaffold(
         appBar: AppBar(
-          title: const Text(
-            "기쁨이의 일기",
+          title: Text(
+            "${viewModel.user?.name ?? "기쁨"}이의 일기",
             style: FontSystem.initTextStyle,
           ),
         ),

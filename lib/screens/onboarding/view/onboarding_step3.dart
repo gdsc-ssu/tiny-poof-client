@@ -56,6 +56,9 @@ class OnboardingStep3View extends StatelessWidget {
                           color: ColorSystem.black,
                         ),
                         textInputAction: TextInputAction.done,
+                        onChanged: (value) {
+                          viewModel.onChangedName(value);
+                        },
                         onSubmitted: (text) => viewModel.onTapNext(),
                       ),
                     ),

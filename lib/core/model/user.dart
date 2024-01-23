@@ -18,14 +18,14 @@ class User {
   Map<String, dynamic> toJson() {
     return {
       'name': name,
-      'birth': birth,
+      'birth': birth.toString(),
     };
   }
 
   factory User.fromJson(Map<String, dynamic> json) {
     return User(
       name: json['name'],
-      birth: json['birth'],
+      birth: DateTime.parse(json['birth']),
     );
   }
 }

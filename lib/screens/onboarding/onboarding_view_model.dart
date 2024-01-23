@@ -1,8 +1,8 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tiny_poof/core/base/base_viewmodel.dart';
+import 'package:tiny_poof/core/factory/shared_preference_factory.dart';
+import 'package:tiny_poof/core/model/user.dart';
 import 'package:tiny_poof/core/routes/app_routes.dart';
 
 class OnboardingViewModel extends BaseViewModel {
@@ -21,7 +21,7 @@ class OnboardingViewModel extends BaseViewModel {
 
   void onTapNext() {
     step += 1;
-    log("STEP : $step");
+    print("NAME : $name");
     notifyListeners();
     if (step == 2) {
       viewModelContext.pushReplacementNamed(Routes.initStep2);
@@ -31,6 +31,16 @@ class OnboardingViewModel extends BaseViewModel {
       viewModelContext.pushReplacementNamed(Routes.initStep4);
     }
   }
+
+  void onChangedName(String text) {
+    name = text;
+    SharedPreferenceFactory.setUserData(
+      User(name: name, birth: birthDate ?? DateTime.now()),
+    );
+    notifyListeners();
+  }
+
+  String name = "";
 
   void onTapFinish() {
     viewModelContext.pushReplacementNamed(Routes.main);

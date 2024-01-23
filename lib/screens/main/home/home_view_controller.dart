@@ -29,7 +29,7 @@ class HomeViewModel extends BaseViewModel {
   }
 
   void getTodayAnalysis() {
-    todayAnalysis = "오늘은 행복한 하루였어요!";
+    todayAnalysis = "갈색 80%, 녹색 20%로 정상적인 똥에 속해요. 채소를 먹으면 녹색 똥이 나올 수 있어요.";
     notifyListeners();
   }
 }

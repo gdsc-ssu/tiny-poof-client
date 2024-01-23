@@ -30,7 +30,7 @@ class OnboardingStep1View extends StatelessWidget {
             ),
           ),
           bottomNavigationBar: BottomButton(
-            onTap: viewModel.onTapFinish,
+            onTap: viewModel.onTapNext,
             text: "다음으로",
           ),
         );
