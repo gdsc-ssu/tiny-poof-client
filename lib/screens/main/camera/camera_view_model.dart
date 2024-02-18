@@ -34,5 +34,6 @@ class CameraViewModel extends BaseViewModel {
 
   void onTapTakePicture() async {
     final result = await cameraController.takePicture();
+    result;
   }
 }

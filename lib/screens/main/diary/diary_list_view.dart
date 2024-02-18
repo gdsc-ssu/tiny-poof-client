@@ -3,7 +3,7 @@ import 'package:tiny_poof/core/base/base_view.dart';
 import 'package:tiny_poof/core/constant/color_constant.dart';
 import 'package:tiny_poof/core/constant/font_constant.dart';
 import 'package:tiny_poof/core/util/date_format.dart';
-import 'package:tiny_poof/screens/main/diary/diary_view_controller.dart';
+import 'package:tiny_poof/screens/main/diary/diary_view_model.dart';
 
 class DiaryListView extends StatelessWidget {
   const DiaryListView({super.key});

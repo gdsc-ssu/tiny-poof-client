@@ -29,7 +29,7 @@ class OnboardingStep4View extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Baby Birth",
+                    "생년월일",
                     style: FontSystem.initTextStyle.copyWith(fontSize: 23),
                   ),
                   GestureDetector(

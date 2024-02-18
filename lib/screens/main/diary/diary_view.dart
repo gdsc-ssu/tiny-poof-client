@@ -5,7 +5,7 @@ import 'package:tiny_poof/core/common/view/bottom_button.dart';
 import 'package:tiny_poof/core/constant/color_constant.dart';
 import 'package:tiny_poof/core/constant/font_constant.dart';
 import 'package:tiny_poof/core/extension/context_extension.dart';
-import 'package:tiny_poof/screens/main/diary/diary_view_controller.dart';
+import 'package:tiny_poof/screens/main/diary/diary_view_model.dart';
 
 class DiaryView extends StatelessWidget {
   const DiaryView({super.key});

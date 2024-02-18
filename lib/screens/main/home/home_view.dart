@@ -46,6 +46,26 @@ class HomeView extends StatelessWidget {
                 text: "오늘 하루 기록 더보기",
                 margin: const EdgeInsets.all(0),
               ),
+              const Text(
+                "오늘 식사",
+                style: FontSystem.initTextStyle,
+              ),
+              const SizedBox(height: 8),
+              if (viewModel.selectedMeal.isEmpty)
+                const _TodayMealWidget()
+              else
+                Row(
+                  children: [
+                    Text(viewModel.selectedMeal),
+                    const Text("메모"),
+                  ],
+                ),
+              const SizedBox(height: 12),
+              BottomButton(
+                onTap: () {},
+                text: "추가하기",
+                margin: const EdgeInsets.all(0),
+              ),
             ],
           ),
         ),
@@ -69,6 +89,31 @@ class _TextWidget extends StatelessWidget {
       ),
       padding: const EdgeInsets.all(24),
       child: Text(text),
+    );
+  }
+}
+
+class _TodayMealWidget extends StatelessWidget {
+  const _TodayMealWidget();
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () => HomeViewModel.instance.onTapTodayMeal(context),
+      child: Container(
+        width: double.infinity,
+        decoration: BoxDecoration(
+          border: Border.all(color: ColorSystem.main2),
+          borderRadius: BorderRadius.circular(16),
+        ),
+        padding: const EdgeInsets.all(10),
+        child: const Text(
+          "종류 입력 ▼",
+          style: TextStyle(
+              color: Colors.black, fontSize: 16, fontWeight: FontWeight.w500),
+          textAlign: TextAlign.center,
+        ),
+      ),
     );
   }
 }

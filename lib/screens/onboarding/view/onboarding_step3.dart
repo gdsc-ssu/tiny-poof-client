@@ -27,7 +27,7 @@ class OnboardingStep3View extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Baby Name",
+                      "아기 이름 (태명)",
                       style: FontSystem.initTextStyle.copyWith(fontSize: 23),
                     ),
                     Container(
@@ -37,9 +37,9 @@ class OnboardingStep3View extends StatelessWidget {
                       ),
                       child: TextField(
                         controller: viewModel.nameTextController,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           hintText: "아기 이름을 입력해주세요.",
-                          hintStyle: const TextStyle(
+                          hintStyle: TextStyle(
                             fontFamily: "Pretendard",
                             fontSize: 16,
                             fontWeight: FontWeight.w300,

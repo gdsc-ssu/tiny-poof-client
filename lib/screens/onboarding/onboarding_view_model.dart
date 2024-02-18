@@ -21,7 +21,6 @@ class OnboardingViewModel extends BaseViewModel {
 
   void onTapNext() {
     step += 1;
-    print("NAME : $name");
     notifyListeners();
     if (step == 2) {
       viewModelContext.pushReplacementNamed(Routes.initStep2);
