@@ -37,21 +37,22 @@ class OnboardingStep4View extends StatelessWidget {
                       await showCupertinoModalPopup(
                         context: context,
                         builder: (context) {
-                          return Material(
-                            child: Container(
-                              decoration: const BoxDecoration(
-                                borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(16),
-                                  topRight: Radius.circular(16),
-                                ),
-                                color: ColorSystem.white,
+                          return Container(
+                            decoration: const BoxDecoration(
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(16),
+                                topRight: Radius.circular(16),
                               ),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                children: [
-                                  Semantics(
-                                    enabled: true,
+                              color: Colors.transparent,
+                            ),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Semantics(
+                                  enabled: true,
+                                  child: Material(
                                     child: SizedBox(
                                       height: 200,
                                       child: CupertinoDatePicker(
@@ -65,26 +66,27 @@ class OnboardingStep4View extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                  SafeArea(
-                                    child: Semantics(
-                                      button: true,
-                                      enabled: true,
-                                      child: Padding(
-                                        padding: const EdgeInsets.only(
-                                            right: 20, top: 20),
-                                        child: GestureDetector(
-                                          onTap: () {
-                                            Navigator.pop(context);
-                                            viewModel.onTapFinish();
-                                          },
-                                          child: const Text("완료",
-                                              style: FontSystem.initTextStyle),
-                                        ),
+                                ),
+                                const SizedBox(height: 100),
+                                SafeArea(
+                                  child: Semantics(
+                                    button: true,
+                                    enabled: true,
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(top: 20),
+                                      child: Material(
+                                        color: Colors.transparent,
+                                        child: BottomButton(
+                                            onTap: () {
+                                              Navigator.pop(context);
+                                              viewModel.onTapFinish();
+                                            },
+                                            text: "완료"),
                                       ),
                                     ),
                                   ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
                           );
                         },
@@ -107,7 +109,7 @@ class OnboardingStep4View extends StatelessWidget {
           ),
           bottomNavigationBar: BottomButton(
             onTap: viewModel.onTapFinish,
-            text: "완료하기",
+            text: "다음",
           ),
         );
       },

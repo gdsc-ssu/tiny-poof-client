@@ -20,17 +20,17 @@ class BottomButton extends StatelessWidget {
           onTap: onTap,
           child: Container(
             width: double.infinity,
-            height: 50,
+            height: 80,
             margin: margin ??
                 const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16),
-              color: ColorSystem.main2,
+              borderRadius: BorderRadius.circular(32),
+              color: const Color(0xFF4A6EED),
             ),
             alignment: Alignment.center,
             child: Text(
               text,
-              style: FontSystem.bottomButtonTextStyle,
+              style: FontSystem.bottomButtonTextStyle.copyWith(fontSize: 24),
             ),
           ),
         ),

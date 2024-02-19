@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:tiny_poof/core/base/base_viewmodel.dart';
+import 'package:tiny_poof/core/routes/app_routes.dart';
 
 class HomeViewModel extends BaseViewModel {
   static HomeViewModel? _instance;
@@ -45,6 +47,10 @@ class HomeViewModel extends BaseViewModel {
   void selecteMeal(String meal) {
     selectedMeal = meal;
     notifyListeners();
+  }
+
+  void onTapAnalysis(BuildContext context) {
+    context.pushNamed(Routes.analysis);
   }
 }
 

@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:tiny_poof/core/base/base_viewmodel.dart';
 import 'package:tiny_poof/core/routes/app_routes.dart';
 import 'package:camera/camera.dart';
+import 'package:tiny_poof/screens/main/main_view_model.dart';
 
 class CameraViewModel extends BaseViewModel {
   static CameraViewModel? _instance;
@@ -17,14 +18,15 @@ class CameraViewModel extends BaseViewModel {
     viewModelContext = context;
   }
 
+  bool isLoading = false;
+
   List<CameraDescription> descriptions = [];
   late CameraController cameraController;
 
   Future<void> initCamera() async {
     descriptions = await availableCameras();
-    cameraController = CameraController(descriptions[1], ResolutionPreset.high);
+    cameraController = CameraController(descriptions[0], ResolutionPreset.high);
     await cameraController.initialize();
-    notifyListeners();
   }
 
   void onTapCamera() {
@@ -33,7 +35,14 @@ class CameraViewModel extends BaseViewModel {
   }
 
   void onTapTakePicture() async {
-    final result = await cameraController.takePicture();
-    result;
+    await cameraController.takePicture();
+    cameraController.dispose();
+    isLoading = true;
+    notifyListeners();
+    await Future.delayed(const Duration(seconds: 1), () {
+      viewModelContext.pop();
+      final instance = MainViewModel.instance;
+      instance.changeView(1);
+    });
   }
 }

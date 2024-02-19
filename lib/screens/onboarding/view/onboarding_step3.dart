@@ -28,8 +28,9 @@ class OnboardingStep3View extends StatelessWidget {
                   children: [
                     Text(
                       "아기 이름 (태명)",
-                      style: FontSystem.initTextStyle.copyWith(fontSize: 23),
+                      style: FontSystem.initTextStyle.copyWith(fontSize: 20),
                     ),
+                    const SizedBox(height: 8),
                     Container(
                       decoration: BoxDecoration(
                         color: ColorSystem.white,
@@ -45,8 +46,7 @@ class OnboardingStep3View extends StatelessWidget {
                             fontWeight: FontWeight.w300,
                             color: ColorSystem.lightGray,
                           ),
-                          contentPadding:
-                              const EdgeInsets.symmetric(horizontal: 10),
+                          contentPadding: EdgeInsets.symmetric(horizontal: 10),
                           border: InputBorder.none,
                         ),
                         style: const TextStyle(
@@ -68,7 +68,7 @@ class OnboardingStep3View extends StatelessWidget {
             ),
             bottomNavigationBar: BottomButton(
               onTap: () => viewModel.onTapNext(),
-              text: "다음으로",
+              text: "다음",
             ),
           );
         });

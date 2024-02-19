@@ -17,11 +17,10 @@ class MainViewModel extends BaseViewModel {
     viewModelContext = context;
   }
 
-  int _currentIndex = 0;
-  int get currentIndex => _currentIndex;
+  int currentIndex = 0;
 
   void changeView(int index) {
-    _currentIndex = index;
+    currentIndex = index;
     notifyListeners();
   }
 
@@ -32,5 +31,5 @@ class MainViewModel extends BaseViewModel {
   ];
   List<Widget> get views => _views;
 
-  Widget get currentView => _views[_currentIndex];
+  Widget get currentView => _views[currentIndex];
 }

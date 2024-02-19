@@ -14,7 +14,11 @@ class HomeView extends StatelessWidget {
     return BaseView(
       viewModel: HomeViewModel.instance,
       builder: (context, viewModel, child) => Scaffold(
-        appBar: const CustomAppbar(text: "푸푸 다이어리"),
+        appBar: AppBar(
+          title: Image.asset("assets/images/smart-poof.png", height: 47),
+          scrolledUnderElevation: 0,
+          backgroundColor: ColorSystem.backgroundColor,
+        ),
         backgroundColor: ColorSystem.backgroundColor,
         body: SingleChildScrollView(
           padding: const EdgeInsets.fromLTRB(24, 0, 24, 0),
@@ -29,7 +33,9 @@ class HomeView extends StatelessWidget {
               _TextWidget(text: viewModel.weeklyAnalysis),
               const SizedBox(height: 12),
               BottomButton(
-                onTap: () {},
+                onTap: () {
+                  viewModel.onTapAnalysis(context);
+                },
                 text: "주 단위 분석 더보기",
                 margin: const EdgeInsets.all(0),
               ),

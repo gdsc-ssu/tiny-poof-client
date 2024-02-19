@@ -15,15 +15,21 @@ class OnboardingStep1View extends StatelessWidget {
       builder: (context2, viewModel, child) {
         return Scaffold(
           backgroundColor: ColorSystem.backgroundColor,
-          body: const Padding(
-            padding: EdgeInsets.only(left: 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+          body: Padding(
+            padding: const EdgeInsets.only(left: 20),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Center(
+                Image.asset(
+                  "assets/images/smart-poof.png",
+                  height: 47,
+                  fit: BoxFit.fitHeight,
+                ),
+                const Center(
                   child: Text(
-                    "스마트 푸푸를 통해\n아기 똥 색깔을 확인하고\n다이어리를 작성할 수 있어요.",
+                    "스마트 푸푸를 통해\n아기 똥 색깔을 확인하고\n이를 기록하는 다이어리를\n작성할 수 있어요.",
                     style: FontSystem.initTextStyle,
+                    textAlign: TextAlign.center,
                   ),
                 ),
               ],
@@ -31,7 +37,7 @@ class OnboardingStep1View extends StatelessWidget {
           ),
           bottomNavigationBar: BottomButton(
             onTap: viewModel.onTapNext,
-            text: "다음으로",
+            text: "시작하기",
           ),
         );
       },

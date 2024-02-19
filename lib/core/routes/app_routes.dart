@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:tiny_poof/screens/main/camera/camera_view.dart';
 import 'package:tiny_poof/screens/main/camera/take_picture_view.dart';
 import 'package:tiny_poof/screens/main/diary/diary_list_view.dart';
+import 'package:tiny_poof/screens/main/home/analysis_view.dart';
 import 'package:tiny_poof/screens/main/home/home_view.dart';
 import 'package:tiny_poof/screens/main/main_view.dart';
 import 'package:tiny_poof/screens/main/diary/diary_view.dart';
@@ -109,6 +110,14 @@ final routerConfig = GoRouter(
         ),
       ],
     ),
+    GoRoute(
+      path: Routes.analysis,
+      name: Routes.analysis,
+      pageBuilder: (context, state) => CupertinoPage(
+        key: state.pageKey,
+        child: const AnalysisView(),
+      ),
+    ),
   ],
 );
 
@@ -124,4 +133,5 @@ abstract class Routes {
   static const home = 'home';
   static const diary = 'diary';
   static const diaryList = 'diaryList';
+  static const analysis = '/analysis';
 }

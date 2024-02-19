@@ -6,7 +6,7 @@ import 'package:tiny_poof/core/model/user.dart';
 import 'package:tiny_poof/core/routes/app_routes.dart';
 
 class OnboardingViewModel extends BaseViewModel {
-  int step = 1;
+  int step = 2;
   static OnboardingViewModel? _instance;
 
   static OnboardingViewModel get instance {
